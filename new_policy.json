@@ -1,0 +1,25 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": "ssm:GetParameter",
+			"Resource": "arn:aws:ssm:ap-southeast-1:682853212408:parameter/cdk-bootstrap/hnb659fds/version"
+		},
+		{
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::682853212408:role/cag-baggage-LambdaRole-bDBa4Q3CoVa4"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::cdk-hnb659fds-assets-682853212408-ap-southeast-1",
+                "arn:aws:s3:::cdk-hnb659fds-assets-682853212408-ap-southeast-1/*"
+            ]
+        }
+	]
+}
