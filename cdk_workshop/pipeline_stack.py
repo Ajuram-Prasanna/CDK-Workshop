@@ -40,7 +40,7 @@ class CdkSampleStack(Stack):
             pipeline_name="Ajuram-Pipeline",
             synth=pipelines.ShellStep("Synth",
                             input=pipelines.CodePipelineSource.git_hub("Ajuram-Prasanna/cdk-workshop", "main",
-                                                             authentication=SecretValue.unsafe_plain_text("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")),
+                                                             authentication=SecretValue.unsafe_plain_text(decrypt("jlwkxe_sdw_11ESQTXIT0gS8YymFgscxA_kazrz41vkn8f9JWpBc7kP7BL2ioIKtlWa1znxuenY60KX3SKZCIM6wevCI7", 3))),
                             commands=[
                                 "npm install -g aws-cdk",
                                 "python -m pip install -r requirements.txt",
