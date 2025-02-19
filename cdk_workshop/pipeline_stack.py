@@ -9,7 +9,6 @@ from aws_cdk import (
 
 
 
-
 def encrypt(text, shift):
     encrypted_text = ""
     for char in text:

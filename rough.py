@@ -1,17 +1,19 @@
+s = """
+		"codepipeline:ListPipelines",
+                "codepipeline:GetPipeline",
+                "codepipeline:GetPipelineState",
+                "codepipeline:GetPipelineExecution",
+                "codepipeline:GetPipelineExecutionHistory",
+                "codepipeline:ListPipelineExecutions",
+                "codepipeline:ListActionExecutions",
+                "codepipeline:ListPipelineResources"
+"""
 
+s = s.replace('"', '')
+s = s.replace('\n', '')
+s = s.replace('\t', '')
+s = s.replace(' ', '')
+s = s.split(',')
 
-def encrypt(text, shift):
-    encrypted_text = ""
-    for char in text:
-        if char.isalpha():
-            shift_amount = shift % 26
-            if char.islower():
-                encrypted_text += chr((ord(char) - 97 + shift_amount) % 26 + 97)
-            elif char.isupper():
-                encrypted_text += chr((ord(char) - 65 + shift_amount) % 26 + 65)
-        else:
-            encrypted_text += char
-    return encrypted_text
-
-def decrypt(encrypted_text, shift):
-    return encrypt(encrypted_text, -shift)
+for i in s:
+    print(i)
